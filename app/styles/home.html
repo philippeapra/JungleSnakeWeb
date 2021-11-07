@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <title>Play | Jungle Snake</title>
+    <head><script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script></head>
+    <body id="body"> 
+    <center>
+    <meta name="viewport" content="width=1280, initial-scale=1">
+    <br><br><br>
+        <h2>
+           <ul>
+         &nbsp &nbsp <a href="index.html">Home</a> &nbsp &nbsp &nbsp
+        
+        <a href="leaderboard.html">Leaderboard</a> &nbsp &nbsp &nbsp
+    </ul>
+        </h2>           
+        <img src="apple.png" height="25px" width = "25px">
+         <input type="text" id="Score" value="0" readonly="true"/>
+        <!-- <input type="button" onclick="incrementValue()" value="Increment Value" /> -->
+        <img src="highscoretrophy.png" height="25px" width = "25px">
+        <input type="text" id="HighScore" value="0" readonly="true"/><br>
+        <section id="Playground" style="border:25px solid #A16036">
+            
+                <img src="apple.png" id="apple" >
+                <img src="snake.png" id="snake" >
+                
+            </section><br>
+                <input type="text" id="help" value="Use arrows to move snake" readonly="true"/>
+                <br>
+        <footer id="footerxx">
+            <input id= "PauseBtn" type="button" onclick="PauseOrResume()"/>
+            <input id= "RestartBtn" type="button" onclick="Restart()"  /><br>
+            <section id="arrows">
+            <!-- <input id="UpBtn" type="button" onclick="BeforeUp()" ><br>
+            <input id="LeftBtn" type="button" onclick="BeforeLeft()" >&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<input id="RightBtn" type="button" onclick="BeforeRight()"><br>
+            <input id="DownBtn" type="button" onclick="BeforeDown()"> -->
+            </section>
+            
+        </footer>
+        <style>
+            html {
+    -ms-touch-action: manipulation;
+        touch-action: manipulation;
+         height: 100%;
+  overflow: hidden;
+}
+        #body{
+            
+            transform:  scaleY(1);
+            background-color:white;
+            background-image: url(greenframe.png);
+            background-position:top;
+            background-size: 500px;
+            background-repeat: no-repeat;
+            font-family: Helvetica Neue, Arial, Helvetica, sans-serif;
+        }
+        h1 {
+            color: #B2CC48;
+            height: 25px;
+        }
+        #help{
+            text-align: center;
+        }
+        .triangle-up {
+	width: 0;
+	height: 0;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	border-bottom: 50px solid #555;
+}
+   .cone {
+      width: 10;
+      height: 10;
+      border-top: 70px solid transparent;
+      border-bottom: 70px solid transparent;
+      border-left: 100px solid red;
+      border-radius: 40%;
+    }
+        #UpBtn{
+            background-color: #B2CC48;
+            width:70px;
+            height:90px;
+            
+        }
+        #DownBtn{
+            background-color: #B2CC48;
+            width:70px;
+            height:90px;
+        }
+        #RightBtn{
+            background-color: #B2CC48;
+            width:90px;
+            height:70px;
+        }
+        #LeftBtn{
+            background-color: #B2CC48; 
+            width:90px;
+            height:70px;
+        }
+        #Playground{
+            background-image: url(playgroundbackground.jpeg);
+            width: 350px;
+            height: 400px;
+            background-color: white;
+        }
+        #RestartBtn {
+            height: 50px;
+            width: 50px;
+            margin-left: 260px;
+            background-image:url(restart.png) ;
+            background-size: 50px;
+						background-color: transparent;
+        }
+        #PauseBtn {
+            height: 50px;
+            width: 50px;
+            margin-left: 0px;
+            background-image:url(pause.png) ;
+            background-size: 50px;
+						background-color: transparent;
+        }
+        input{
+            font-size: 25px;
+            border: none;
+            /* background-color: #B2CC48; */
+        }
+        #Score {
+            width: 225px;
+        }
+        #HighScore{
+            width: 45px;
+        }
+        
+        #snake{
+            position: absolute;
+            height: 25px;
+            width: 25px;
+            margin-top: 175px;
+            margin-left: 0px;
+            
+        }
+        #apple{
+            position: absolute;
+            height: 25px;
+            width: 25px;
+            margin-top: 175px;
+            margin-left: 100px;
+        }
+        /* #arrows{
+            width: 250px;
+            border-style: solid;
+            border-radius:100% ;
+        } */
+        </style>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-database.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyB5rTeUNIilV6Gv1AzJ8pnKTXa9rpRwsCA",
+    authDomain: "snake-4cefe.firebaseapp.com",
+    databaseURL: "https://snake-4cefe-default-rtdb.firebaseio.com",
+    projectId: "snake-4cefe",
+    storageBucket: "snake-4cefe.appspot.com",
+    messagingSenderId: "485598493318",
+    appId: "1:485598493318:web:13415a61be390f3fb72f07",
+    measurementId: "G-SRBBV3D3XP"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+        <!-- <script src="/__/firebase/8.9.0/firebase-app.js"></script>
+        <script src="/__/firebase/8.9.0/firebase-analytics.js"></script>
+        <script src="/__/firebase/8.9.0/firebase-database.js"></script>
+        <script src="/__/firebase/init.js"></script>-->
+        <script  src="main.js"></script> 
+    </body>
+</center>
+
+
+</html>

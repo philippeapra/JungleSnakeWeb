@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    
+    <body>
+    <center>
+        <meta name="viewport" content="width=1280, initial-scale=1">
+        <br><br><br><br>
+    <section id= "Welcome">
+            <img src="snake.png" ><br><br>
+            <h1>Username : &nbsp</h1><input id="UsernameTV" type="text" placeholder="Enter username" value="">&nbsp &nbsp
+            <!-- <input id="SaveBtn" type="button" value="Save" onclick = "save()"> -->
+            <br><input id="toolongTV" type="text" readonly="true">
+            <br><h1>Snake Color &nbsp</h1><br>
+            <input id="BlueBtn" type="button" value="Blue" onclick = "Blue()">
+            <input id="GreenBtn" type="button" value="Green" onclick = "Green()">
+            <input id="PinkBtn" type="button" value="Pink" onclick = "Pink()">
+            <br><br><h1>Snake Speed &nbsp</h1><br>
+            <input id="SlowBtn" type="button" value="Slow" onclick = "Slow()">
+            <input id="NormalBtn" type="button" value="Normal" onclick = "Normal()">
+            <input id="FastBtn" type="button" value="Fast" onclick = "Fast()">
+        </section><br><br>
+       <footer>
+        <img id="playbtn" src="fancyplaybtn.png" onclick="Play()"> 
+       </footer>
+        <style>
+        body{
+            background-image: url(greenframe.png);
+            background-color:white;
+            background-position:top;
+            background-size: 600px;
+            background-repeat: no-repeat;
+            font-family: Helvetica Neue, Arial, Helvetica, sans-serif;
+        }
+        img{
+            width:300px;
+            height:300px;
+        }
+        input{
+            width:100px;
+            height: 30px;
+        }
+        #toolongTV{
+            height: 10px;
+            border: none;
+            margin-left: 90px;
+            color: tomato;
+            width: 150px;
+        }
+        div{
+            padding-top: 10px;
+            width: 400px;
+            height: 40px;
+            font-size: 25px;
+            border-style: solid;
+            border-radius: 10px;
+            border-bottom: 0px;
+            border-color: #B2CC48;
+        }
+        #UsernameTV{
+            display: inline-block;
+            width: 200px;
+            font-family: monospace;
+            font-size: 25px;
+        }
+        #playbtn{
+            width: 300px;
+            height: 200px;
+        }
+        #SaveBtn{
+            width: 50px;
+            height: 25px;
+        }
+
+        h2 { 
+            height: 0px;
+            color: #B2CC48;
+        }
+        h1 { 
+            height: 20px;
+            display: inline-block;
+            color: #B2CC48;
+        }
+        </style> 
+        <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script>
+        <script>
+          var firebaseConfig = {
+            apiKey: "AIzaSyB5rTeUNIilV6Gv1AzJ8pnKTXa9rpRwsCA",
+            authDomain: "snake-4cefe.firebaseapp.com",
+            databaseURL: "https://snake-4cefe-default-rtdb.firebaseio.com",
+            projectId: "snake-4cefe",
+            storageBucket: "snake-4cefe.appspot.com",
+            messagingSenderId: "485598493318",
+            appId: "1:485598493318:web:13415a61be390f3fb72f07",
+            measurementId: "G-SRBBV3D3XP"
+          };
+          firebase.initializeApp(firebaseConfig);
+          firebase.analytics();
+        </script> 
+<script src="home.js"></script>
+    </body>
+    
+</center>
+
+
+</html>

@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "install",
+			"path": "Directory/.vs/",
+			"problemMatcher": [],
+			"label": "npm: install - Directory/.vs",
+			"detail": "install dependencies from package"
+		}
+	]
+}

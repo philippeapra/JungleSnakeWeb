@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <title>Leaderboard | Jungle Snake</title>
+    <meta name="viewport" content="width=1280, initial-scale=1">
+    <center>
+        <br><br><br><br>
+        <h2>
+    <ul>
+         &nbsp &nbsp <a href="index.html">Home</a> &nbsp &nbsp &nbsp
+        <a href="home.html" >Play</a> &nbsp &nbsp &nbsp 
+    </ul> 
+        </h2>
+    
+    <h1>
+    Leaderboard</h1>
+
+    <body>
+        <section id= "leaderboard">
+            
+        </section>
+       
+        <style>
+        body{
+            background-image: url(greenframe1.png);
+            background-color:white;
+            background-position:top;
+            background-size: 600px;
+            background-repeat: no-repeat;
+            font-family: Helvetica Neue, Arial, Helvetica, sans-serif;
+        }
+        div{
+            padding-top: 10px;
+            width: 400px;
+            height: 40px;
+            font-size: 25px;
+            border-style: solid;
+            border-radius: 10px;
+            border-bottom: 0px;
+            border-color: #B2CC48;
+        }
+        input{
+            
+            width: 350px;
+            font-family: monospace;
+            font-size: 25px;
+            border: none;
+            background-color: transparent;
+        }
+        #leaderboard{
+            background-size: 600px;
+            background-position:center;
+            background-image: url(greenframe2.png);
+            background-repeat:repeat-y;
+        }
+        
+        h1 { 
+            color: #B2CC48;
+        }
+        </style>
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script>
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyB5rTeUNIilV6Gv1AzJ8pnKTXa9rpRwsCA",
+    authDomain: "snake-4cefe.firebaseapp.com",
+    databaseURL: "https://snake-4cefe-default-rtdb.firebaseio.com",
+    projectId: "snake-4cefe",
+    storageBucket: "snake-4cefe.appspot.com",
+    messagingSenderId: "485598493318",
+    appId: "1:485598493318:web:13415a61be390f3fb72f07",
+    measurementId: "G-SRBBV3D3XP"
+  };
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script> 
+<script src="leaderboard.js"></script>
+    </body>
+    
+</center>
+
+
+</html>
